@@ -1,3 +1,6 @@
+#SESSION 1
+
+
 print("hello 'piyush' how are you")
 
 #variables
@@ -16,3 +19,41 @@ print(name[0:6])
 print(name[:])
 print(name[0:len(name)])
 print(name.split("v"))
+
+
+
+
+
+
+
+
+SESSION 2
+
+name="piyush"
+num=10
+num_alpha=str(num)
+print(num_alpha.isalnum())
+
+#constional
+
+list=["apple","banana"]
+
+for i in list:
+    print(i)
+    if (i.lower()=="banana"):
+        print(list[list.index("apple")+1])
+        break
+        #print(i)
+        
+        
+    
+        #use while with break so that do not go infiente
+n=1
+while(n!=0):
+    print("hello")
+    n+=1
+    
+    
+    if(n>10):
+        break
+        
