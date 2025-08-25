@@ -1,0 +1,28 @@
+list=[1,2,3,4,5,"APPLE","BANANA","CHIKOOO"]
+print(list[::3])
+list[3]="hello"
+print(list)
+
+for i in reversed(list):
+    print(str(i)+" is the value")
+
+
+#list comprehension
+list=[1,2,3,4,5,6,7,8,9]
+new_list=[(i*i*i) for i in list if (i%2==0)]
+print(new_list)
+
+#hierarchy of dict
+dict={"a":1,"b":2,"inside_dict":{"c":3,"d":4}}
+print(dict["inside_dict"]["d"])
+
+#sets in python do not support duplicates
+set={1,2,3,4,5,5,5}
+print(set)
+set2={44,33}
+print(set.union(set2))
+
+# tuple are immutable
+tuple=(1,2,3,4,5)
+tuple[0]=33
+print(tuple)
