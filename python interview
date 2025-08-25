@@ -1,0 +1,18 @@
+print("hello 'piyush' how are you")
+
+#variables
+name="piyush"
+x=10
+print(name,x)
+
+sum=10+10\
++10
+print(sum)
+
+#slicing
+name="piyushvedwal"
+print(name[0:6])
+#start from 0 and the the index 6 is excluded
+print(name[:])
+print(name[0:len(name)])
+print(name.split("v"))
