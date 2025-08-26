@@ -1,0 +1,26 @@
+class College:
+    
+    dept="It"
+    
+    def info(self,name,dept):
+        print(f"HIS NAME IS {name} and he is from {dept} dept")
+        
+first=College()
+first.info("aryan","mngmt")
+first.info("piyush","ceo")
+        
+        
+
+#constructor
+
+class employees():
+    def __init__(self,name,dept):
+        self.name=name
+        self.dept=dept
+    
+    def show(self):
+        print(f"he is {self.name} from {self.dept} department")
+        
+e1=employees("aryan","QA")    
+var=e1.show()
+print(var)
