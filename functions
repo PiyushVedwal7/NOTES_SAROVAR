@@ -1,0 +1,43 @@
+#understanding kwargs
+
+def form(name,email,**otherinfo):
+    data={
+        'name':name,
+        'email':email
+    }
+    print(data)
+    data.update(otherinfo)
+    return data
+user1 = form("piyushvedwal", "piyush@example.com", location="Dehradun", age=25)
+print(user1)
+
+
+add=lambda x,y:x+y
+res=add(1,2)
+print(res)
+
+
+
+#map 
+
+numbers=[1,2,3,4,5]
+
+sq=lambda i:i*i
+
+def cube(num):
+    return num*num*num
+
+print(list(map(sq,numbers)))
+print(list(map(cube,numbers)))
+
+
+
+
+
+
+#enumerate fn
+
+my_list=[100,200,300,400]
+#when we want to print value and index of thw elemetns
+for i,x in enumerate(my_list):
+    print(i,x)
