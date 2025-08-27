@@ -1,0 +1,88 @@
+#INHERITANCE
+
+
+#SINGLE LEVEL
+
+class company:
+    def info(self):
+        print("company abc")
+
+class emp(company):
+    def show(self):
+        print(f" he woeks for "); super().info()
+
+
+emp1=emp()
+emp1.show()
+emp1.info()
+        
+        
+        
+#python supports multiple inheritance 
+#as it have a order (method resolution order which defined a order of the calling)
+"""Java's solution is to disallow this entirely. A class can only inherit from one parent class. However, a Java class can implement multiple interfaces, which define what a class must do but not how, thus avoiding the conflict.
+
+Python's Solution: Method Resolution Order (MRO)
+Python 🐍 doesn't avoid the Diamond Problem; it solves it with a clear and predictable rule called the Method Resolution Order (MRO).
+
+The MRO defines the exact order in which Python will search the inheritance hierarchy for a method. It follows a "depth-first, left-to-right" logic. In our Tutor example, if the class was defined as class Tutor(Doctor, Teacher):, Python would:
+
+
+Search Tutor first.
+
+Then, search the first parent listed: Doctor.
+
+Then, search the second parent: Teacher.
+
+Finally, search the grandparent: Person.
+
+The first work() method it finds is the one it uses. There is no ambiguity because the order is strictly defined.
+"""
+
+class Animal:
+    def sound(self):
+        print("animal eats")
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+class Cat(Animal):
+    def sound(self):
+        print("cat meows")
+class hybrid(Dog,Cat):
+    pass
+t=hybrid()
+t.sound()
+print(hybrid.__mro__)
+
+
+#MULTILEVEL INHERITANCE LIKE ANCEDSTORS
+
+# Level 1: The Grandparent Class
+class Grandparent:
+    def skill_one(self):
+        print("I am the grandparent. I can cook.")
+
+# Level 2: The Parent Class inherits from Grandparent
+class Parent(Grandparent):
+    def skill_two(self):
+        print("I am the parent. I can code.")
+
+# Level 3: The Child Class inherits from Parent
+class Child(Parent):
+    def skill_three(self):
+        print("I am the child. I can play games.")
+
+# --- Let's see it in action ---
+
+# Create an object of the Child class
+kid = Child()
+
+# The 'kid' object can access methods from ALL levels of its ancestry:
+print("Child's abilities:")
+kid.skill_three() # From its own class
+kid.skill_two()   # Inherited from Parent
+kid.skill_one()   # Inherited from Grandparent
+        
+
+
+        
