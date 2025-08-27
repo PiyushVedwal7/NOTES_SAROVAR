@@ -1,0 +1,48 @@
+"""import requests
+
+response=requests.get("https://official-joke-api.appspot.com/random_joke")
+data=response.json()
+print(data)"""
+import requests
+import concurrent.futures
+import time
+
+URL = "https://official-joke-api.appspot.com/random_joke"
+
+# Function to fetch a joke
+def get_joke(url):
+    try:
+        response = requests.get(url, timeout=5)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return None
+    except Exception as e:
+        print(f"Error fetching joke: {e}")
+        return None
+
+
+print("--- Fetching 10 jokes with multithreading... ---")
+start_time_multi = time.time()
+
+urls = [URL] * 10  # 10 requests to the same endpoint
+
+# Use ThreadPoolExecutor for parallel requests
+with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    results = executor.map(get_joke, urls)
+
+# Print results
+joke_count = 0
+for joke in results:
+    if joke:
+        joke_count += 1
+        print(f"{joke_count}. {joke['setup']} - {joke['punchline']}")
+
+end_time_multi = time.time()
+print(f"\nMultithreaded took: {end_time_multi - start_time_multi:.2f} seconds")
+
+
+
+
+
+
