@@ -1,0 +1,32 @@
+#getter ans setter 
+
+class Employee:
+    def __init__(self,name,sal):
+        self.name=name
+        self.sal=sal
+        
+    @property
+    def data(self):
+        
+        return f"the employee {self.name} earns {self.sal} per month"
+
+
+    @data.setter
+    def data(self,new_data):
+       new_name=new_data[0]
+       new_sal=new_data[1]
+    
+    
+       self.name=new_name
+       self.sal=new_sal
+    
+
+emp = Employee("Piyush Vedwal", 80000)
+print(f"Before update: {emp.data}")
+
+# Pass a list to the setter
+new_info_list = ["Aryan Kumar", 110000]
+emp.data = new_info_list # The setter is called here
+
+print(f"After update:  {emp.data}")    
+        
